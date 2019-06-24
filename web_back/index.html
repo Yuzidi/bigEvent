@@ -112,6 +112,22 @@
     </script>
 
     <script>
+        $(function(){
+            $('#btn-logout').on('click',function(e){
+                e.preventDefault();
+                $.post({
+                    url:'http://localhost:8000/admin/logout',
+                    success:function(backData){
+                        if(backData.code===200){
+                            window.location.href='login.html'
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+
+    <!-- <script>
        $(function(){
          /*
         1.点击退出那个a标签,发送ajax请求,
@@ -141,7 +157,7 @@
         //$('body').html("");
 
        });
-    </script>
+    </script> -->
 
 </body>
 
